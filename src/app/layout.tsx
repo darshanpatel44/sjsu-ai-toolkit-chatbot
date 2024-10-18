@@ -1,36 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import Swap from "@/components/Swap";
+// import Swap from "@/components/Swap";
 
 export const metadata: Metadata = {
-  title: "Gemini PRO",
-  description: "Chat with Gemini Pro AI",
+  title: "SJSU AI tool kit",
+  description: "Chat with SJSU AI tool kit",
   manifest: "/manifest.json",
-  metadataBase: new URL("https://geminix-pro.vercel.app/"),
   openGraph: {
     type: "website",
-    url: "https://geminix-pro.vercel.app/",
-    title: "GeminiPRO Chat AI",
-
-    description: "Chat with Gemini Pro AI",
-    images: [
-      {
-        url: "/android-chrome-192x192.png",
-        width: 192,
-        height: 192,
-        alt: "GeminiPRO Chat AI",
-      },
-      {
-        url: "/android-chrome-512x512.png",
-        width: 512,
-        height: 512,
-        alt: "GeminiPRO Chat AI",
-      },
-    ],
-  },
-  icons: {
-    icon: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
+    url: "https://www.sjsu.edu/",
+    title: "SJSU AI tool kit",
+    description: "Chat with SJSU AI tool kit",
   },
 };
 export const viewport: Viewport = {
@@ -48,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Swap />
+        {/* <Swap /> */}
         {children}
       </body>
     </html>

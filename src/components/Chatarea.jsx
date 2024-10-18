@@ -13,13 +13,15 @@ const ChatArea = () => {
   const [history, setHistory] = useState([
     {
       role: "model",
-      parts: "Great to meet you. Im Gemini, your chatbot.",
+      parts: "Hi, I am SJSU AI toolkit. How can I help you?",
     },
   ]);
-  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_APIKEY);
+  const genAI = new GoogleGenerativeAI(
+    "AIzaSyBQ_m_tS-GlfCFLC-65AzkJzw8-6tPGEPM"
+  );
   const [chat, setchat] = useState(null);
 
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -90,7 +92,7 @@ const ChatArea = () => {
     setHistory([
       {
         role: "model",
-        parts: "Great to meet you. Im Gemini, your chatbot.",
+        parts: "Hi, I am SJSU AI toolkit. How can I help you?",
       },
     ]);
     setinput("");
@@ -108,17 +110,14 @@ const ChatArea = () => {
             }`}
           >
             <div className="chat-image avatar">
-              <div className="w-6 md:w-10 rounded-full">
-                <Image
-                  alt="o"
-                  src={item.role === "model" ? "/geminis.jpeg" : "/user.jpg"}
-                  width={50}
-                  height={50}
-                />
+              <div className="w-6 md:w-10 items-center justify-center rounded-full">
+                <div className="font-bold pr-4">
+                  {item.role === "model" ? "AI" : "U"}
+                </div>
               </div>
             </div>
             <div className="chat-header mx-2 font-semibold opacity-80">
-              {item.role === "model" ? "Gemini" : "You"}
+              {item.role === "model" ? "SJSU AI" : "You"}
             </div>
             <div
               className={`chat-bubble font-medium ${
